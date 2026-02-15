@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Tech Event | SupPlant</title>
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --accent-purple: #6c5ce7;
+            --soft-pink: #fd79a8;
+            --deep-dark: #2d3436;
+            --gradient: linear-gradient(135deg, #a29bfe 0%, #fd79a8 100%);
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--deep-dark);
+        }
+
+        .bg-shape {
+            position: fixed;
+            z-index: -1;
+            filter: blur(80px);
+            border-radius: 50%;
+        }
+        .shape-1 { top: -10%; left: -10%; width: 400px; height: 400px; background: rgba(108, 92, 231, 0.2); }
+        .shape-2 { bottom: -10%; right: -10%; width: 500px; height: 500px; background: rgba(253, 121, 168, 0.15); }
+
+        .container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            max-width: 550px;
+            width: 90%;
+            margin: 40px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 160px;
+            background: var(--gradient);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image::after {
+            content: '{ CODE }';
+            font-family: monospace;
+            font-size: 3.5rem;
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+        }
+
+        .profile-badge {
+            position: absolute;
+            bottom: -25px;
+            background: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            font-weight: 700;
+            color: var(--accent-purple);
+            font-size: 0.9rem;
+        }
+
+        .content {
+            padding: 45px 25px 30px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #636e72;
+            margin-bottom: 30px;
+        }
+
+        .agenda {
+            text-align: right;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px dashed var(--accent-purple);
+        }
+
+        .agenda h3 {
+            margin-top: 0;
+            color: var(--accent-purple);
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(108, 92, 231, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .agenda ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .agenda li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-right: 25px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .agenda li::before {
+            content: '✦';
+            position: absolute;
+            right: 0;
+            color: var(--soft-pink);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            text-align: right;
+        }
+
+        .info-card strong {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--soft-pink);
+            margin-bottom: 3px;
+        }
+
+        .info-card span {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .pizza-tag {
+            background: #fff3f8;
+            color: var(--soft-pink);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        .cta-btn {
+            display: block;
+            background: var(--gradient);
+            color: var(--white);
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 18px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 10px 25px rgba(253, 121, 168, 0.3);
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(253, 121, 168, 0.4);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            color: #b2bec3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-shape shape-1"></div>
+<div class="bg-shape shape-2"></div>
+
+<div class="container">
+    <div class="hero-image">
+        <div class="profile-badge">SupPlant x High School Edition</div>
+    </div>
+    
+    <div class="content">
+        <h1>Tech, Girl Power & Data</h1>
+        <p class="subtitle">הצצה בלעדית לעולם ההייטק האמיתי</p>
+
+        <div class="agenda">
+            <h3>מה בתכנית? ✨</h3>
+            <ul>
+                <li><strong>VIP Tour:</strong> סיור מאחורי הקלעים במשרדי SupPlant.</li>
+                <li><strong>From Zero to Hero:</strong> איך הופכים רעיון משוגע למוצר טכנולוגי שמשנה את העולם.</li>
+                <li><strong>Women in Tech:</strong> שיחה פתוחה עם מפתחות ואנליסטיות על הקריירה שלהן.</li>
+                <li><strong>Data Magic:</strong> איך נתונים עוזרים לחקלאים בכל העולם.</li>
+            </ul>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <strong>מתי?</strong>
+                <span>22.02.2026 | 12:00</span>
+            </div>
+            <div class="info-card">
+                <strong>איפה?</strong>
+                <span>סופלנט, עפולה</span>
+            </div>
+        </div>
+
+        <div class="pizza-tag">🍕 וברור שיהיה פיצה ופינוקים!</div>
+
+        <button class="cta-btn" onclick="register()">תשמרי לי מקום!</button>
+        
+        <footer>* מיועד לתלמידות כיתות י', י"א ו-י"ב במגמות טכנולוגיות</footer>
+    </div>
+</div>
+
+<script>
+    function register() {
+        const btn = document.querySelector('.cta-btn');
+        
+        // FeedBack visual
+        btn.style.background = '#00b894';
+        btn.style.boxShadow = 'none';
+        btn.innerText = 'מעבירה אותך להרשמה... ✨';
+
+        // כאן תדביקי את הקישור שנוצר לך מה-Google Apps Script
+        const googleFormUrl = "https://forms.gle/fCy5ZWnSF2n63das6";
+        
+        setTimeout(() => {
+            window.open(googleFormUrl, '_blank');
+            btn.innerText = 'תודה, נרשמת! 💖';
+        }, 800);
+    }
+</script>
+
+</body>
+</html>
